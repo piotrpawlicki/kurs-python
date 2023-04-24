@@ -67,12 +67,16 @@ print(replaced)
 print('***********************************')
 print('ZAD 4')
 title = input('Insert book title: ')
-if title.isalpha() == False:
+title_new = title.replace(' ','')
+if title_new.isalpha() == False:
     title = input('Wrong format! Insert book title: ')
+    title_new = title.replace(' ', '')
 
 name = input('Insert author name: ')
-if name.isalpha() == False:
+name_new = name.replace(' ','')
+if name_new.isalpha() == False:
     name = input('Wrong format! Insert author name: ')
+    name_new = name.replace(' ', '')
 
 pages = input('Insert number of pages: ')
 if pages.isnumeric() == False:
