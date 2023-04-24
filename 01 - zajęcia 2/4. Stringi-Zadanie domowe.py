@@ -26,8 +26,18 @@ quote = 'Honesty is the first chapter in the book of wisdom.'
 
 len_quote = len(quote)
 print('len_quote : ', len_quote)     ##Policz wszystkie znaki w napisie
-print(quote[-7:-1])                  ##Nie modyfikując zmiennej wyświetl słowo wisdom
-print(quote[len_quote-1:len_quote])  ##Wyświetl tylko kropkę
+
+index_start = quote.find('wisdom')   ##Nie modyfikując zmiennej wyświetl słowo wisdom
+wisdom_len=len('wisdom')
+index_stop = wisdom_len + index_start
+print(quote[index_start:index_stop])
+
+
+index_start = quote.find('.')        ##Wyświetl tylko kropkę
+dot_len=len('.')
+index_stop = dot_len + index_start
+print(quote[index_start:index_stop])
+
 print(quote[:int(len_quote/2)])      ##Wyświetl tylko pierwszą połowę tekstu
 print(quote[int(len_quote / 2)::3])  ##Wyświetl od połowy tylko co trzecią literę cytatu
 print(quote[::2])                    ##Wyświetl ‘Hnsyi h is hpe ntebo fwso.’
