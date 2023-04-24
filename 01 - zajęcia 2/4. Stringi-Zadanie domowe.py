@@ -39,7 +39,11 @@ index_stop = dot_len + index_start
 print(quote[index_start:index_stop])
 
 print(quote[:int(len_quote/2)])      ##Wyświetl tylko pierwszą połowę tekstu
-print(quote[int(len_quote / 2)::3])  ##Wyświetl od połowy tylko co trzecią literę cytatu
+
+quote_new=quote.replace(' ','')      ##Wyświetl od połowy tylko co trzecią literę cytatu
+len_quote_new = len(quote_new)
+print(quote_new[int(len_quote_new / 2)::3])
+
 print(quote[::2])                    ##Wyświetl ‘Hnsyi h is hpe ntebo fwso.’
 
 ##Wyświetl cały cytat odwrotnie
