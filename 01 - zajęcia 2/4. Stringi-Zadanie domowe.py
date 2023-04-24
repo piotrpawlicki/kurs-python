@@ -68,18 +68,18 @@ print('***********************************')
 print('ZAD 4')
 title = input('Insert book title: ')
 title_new = title.replace(' ','')
-if title_new.isalpha() == False:
+while title_new.isalpha() == False:
     title = input('Wrong format! Insert book title: ')
     title_new = title.replace(' ', '')
 
 name = input('Insert author name: ')
 name_new = name.replace(' ','')
-if name_new.isalpha() == False:
+while name_new.isalpha() == False:
     name = input('Wrong format! Insert author name: ')
     name_new = name.replace(' ', '')
 
 pages = input('Insert number of pages: ')
-if pages.isnumeric() == False:
+while pages.isnumeric() == False:
     pages = input('Wrong format! Insert number of pages: ')
 
 title = title.lower()

@@ -33,7 +33,8 @@ print('ZAD 2 - druga opcja')
 bin_num = input("Enter binary number: ")
 
 # Sprawdzenie poprawności formatu
-while bin_num.isdigit() == False:
+
+while not all(char in '01' for char in bin_num):
     print("Wrong format!")
     bin_num = input("Enter binary number: ")
 
