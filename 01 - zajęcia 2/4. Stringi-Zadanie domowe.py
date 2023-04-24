@@ -115,8 +115,6 @@ if len(txt) > 2:
         while i >= -len_txt:
             rev_half2 = rev_half2 + half2[i]
             i = i - 1
-        half1 = half1.upper()
-        rev_half2 = rev_half2.upper()
     elif len(half2) == 1:
         rev_half2 = half2
 
@@ -124,11 +122,13 @@ elif len(txt) == 2:
     half1 = txt[0]
     half2 = txt[1]
     rev_half2 = half2
+
 elif len(txt) ==1:
     half1 = txt[0]
     half2 = txt[0]
     rev_half2 = half2
-
+half1 = half1.upper()
+rev_half2 = rev_half2.upper()
 if half1 == rev_half2:
     print('Your text is the palindrome')
 else:
