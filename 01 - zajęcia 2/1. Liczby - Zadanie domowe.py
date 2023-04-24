@@ -1,6 +1,6 @@
 
 
-## zadanie 1 od Kuby
+## Zad1
 '''
 distance = 120
 gas_price = 5.04
@@ -9,7 +9,8 @@ consumption = 6.4
 fin_price = distance * (consumption / 100) * gas_price
 print('Price is: ', fin_price, 'PLN')
 '''
-## zadanie rozbudowane - zadanie domowe
+
+## Zad2
 
 distance = int(input('Enter lenght of your trip: '))         ## wprowadzenie długości wyprawy
 gas_price = int(input('Enter gas price: '))                  ## wprowadzenie ceny paliwa

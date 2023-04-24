@@ -1,10 +1,7 @@
-##Zad3
+##Zad1
 
-hex_num = 0x1DB
-oct_num = 0o2063
-
-print(hex_num)
-print(oct_num)
+age = input("Enter your age: ")
+print('Your age in binary is: ', bin(int(age)))
 
 ################################################
 
@@ -44,3 +41,14 @@ for digit in bin_num:     ## nie definiuję wcześniej zmiennej digit, bo to zmi
     dec_num = dec_num + int(digit) * (2 ** power)
     power = power - 1
 print("Decimal value:", dec_num)
+
+################################################
+##Zad 3
+
+##Zad3
+
+hex_num = 0x1DB
+oct_num = 0o2063
+
+print(hex_num)
+print(oct_num)
