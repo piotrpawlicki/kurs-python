@@ -101,23 +101,33 @@ print('ZAD 5')
 txt = input('Insert text: ')
 len_txt=int(len(txt)/2)
 
-if len_txt %2 == 1:
-    half1 = txt[:len_txt]
-    half2 = txt[len_txt + 1:]
-else:
-    half1 = txt[:len_txt]
-    half2 = txt[len_txt:]
+if len(txt) > 2:
+    if len_txt %2 == 1:
+        half1 = txt[:len_txt]
+        half2 = txt[len_txt + 1:]
+    else:
+        half1 = txt[:len_txt]
+        half2 = txt[len_txt:]
+    ##reverse half2
+    if len(half2) > 1:
+        i = -1
+        rev_half2 = ''
+        while i >= -len_txt:
+            rev_half2 = rev_half2 + half2[i]
+            i = i - 1
+        half1 = half1.upper()
+        rev_half2 = rev_half2.upper()
+    elif len(half2) == 1:
+        rev_half2 = half2
 
-##reverse half2
-
-i = -1
-rev_half2 = ''
-while i >= -len_txt:
-    rev_half2 = rev_half2 + half2[i]
-    i = i - 1
-
-half1 = half1.upper()
-rev_half2 = rev_half2.upper()
+elif len(txt) == 2:
+    half1 = txt[0]
+    half2 = txt[1]
+    rev_half2 = half2
+elif len(txt) ==1:
+    half1 = txt[0]
+    half2 = txt[0]
+    rev_half2 = half2
 
 if half1 == rev_half2:
     print('Your text is the palindrome')
