@@ -1,12 +1,14 @@
 ##Zad1
-
+print('***********************************')
+print('ZAD 1')
 age = input("Enter your age: ")
 print('Your age in binary is: ', bin(int(age)))
 
-################################################
+########################################################################################
 
-##Zad 2
-
+##Zad2
+print('***********************************')
+print('ZAD 2')
 bin_num = 1001111
 bin_num = str(bin_num)
 
@@ -24,9 +26,10 @@ a6 = 2^6 * int(bin_num[str_len-6])
 conv_bin_num = a0 + a1 + a2 + a3 + a4 + a5 + a6
 print(conv_bin_num)
 
-################################################
-## Zad 2 druga opcja
-
+########################################################################################
+## Zad2 druga opcja
+print('***********************************')
+print('ZAD 2 - druga opcja')
 bin_num = input("Enter binary number: ")
 
 # Sprawdzenie poprawności formatu
@@ -42,11 +45,10 @@ for digit in bin_num:     ## nie definiuję wcześniej zmiennej digit, bo to zmi
     power = power - 1
 print("Decimal value:", dec_num)
 
-################################################
-##Zad 3
-
+########################################################################################
 ##Zad3
-
+print('***********************************')
+print('ZAD 3')
 hex_num = 0x1DB
 oct_num = 0o2063
 
