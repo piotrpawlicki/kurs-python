@@ -117,7 +117,6 @@ if len(txt) > 2:
             i = i - 1
     elif len(half2) == 1:
         rev_half2 = half2
-
 elif len(txt) == 2:
     half1 = txt[0]
     half2 = txt[1]
@@ -133,6 +132,17 @@ if half1 == rev_half2:
     print('Your text is the palindrome')
 else:
     print('Your text is not the palindrome')
+
+########################################################################################
+
+##zad5 wersja 2
+print('***********************************')
+print('ZAD 5 - second version')
+txt = 'Kobyła ma mały bok'
+txt = txt.upper()
+txt = txt.replace(' ','')
+txt2 = txt[::-1]
+print(txt==txt2)
 
 ########################################################################################
 
@@ -174,3 +184,5 @@ print('ZAD 7')
 number = 1234
 word = 'blablabla'
 print('In one sentence i can use number: {} and word: {}'.format(number,word))
+
+
