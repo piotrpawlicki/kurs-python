@@ -138,8 +138,7 @@ else:
 ##zad5 wersja 2
 print('***********************************')
 print('ZAD 5 - second version')
-txt = 'Kobyła ma mały bok'
-txt = txt.upper()
+txt = input('Insert text: ').upper()
 txt = txt.replace(' ','')
 txt2 = txt[::-1]
 print(txt==txt2)
