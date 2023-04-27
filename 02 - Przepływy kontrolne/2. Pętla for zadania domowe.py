@@ -54,27 +54,26 @@ else:
 print('***********************************')
 print('Zad4 - wersja druga')
 
-
 def silnia(silnia_input):
     if silnia_input != 0:
-        silnia_output: int = silnia_input * silnia(silnia_input-1)
+        silnia_output: int = silnia_input * silnia(silnia_input - 1)
         return silnia_output
     else:
         return 1
 
 
-x = input('Wprowadź liczbę w zakresie od 0 do 8: ')
-try:
-    x = int(x)
-    while x not in range(0, 9):
-        x = int(input('Błąd zakresu. Wprowadź liczbę w zakresie od 0 do 8: '))
+while True:
+    x = input('Wprowadź liczbę w zakresie od 0 do 8: ')
+    try:
+        x = int(x)
+        if x not in range(0, 9):
+            raise ValueError('Błąd zakresu. Wprowadź liczbę w zakresie od 0 do 8: ')
+        break
+    except ValueError as e:
+        print('Błąd zakresu. Wprowadź liczbę w zakresie od 0 do 8')
         continue
-   ## break
-except ValueError:
-    print('Błąd formatu. Wprowadź liczbę w zakresie od 0 do 8: ')
-    continue
 
 a = silnia(x)
-liczby = [str(i) for i in range(1, x+1)]  # do listy dodajemy kolejne elementy do wyświetlenia
+liczby = [str(i) for i in range(1, x + 1)]  # do listy dodajemy kolejne elementy do wyświetlenia
 wynik = ' * '.join(liczby)
 print(f'{x}!=\n{wynik} = {a}')
