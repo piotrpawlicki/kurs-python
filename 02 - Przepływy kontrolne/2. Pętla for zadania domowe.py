@@ -24,10 +24,12 @@ print('***********************************')
 print('Zad3')
 
 a = 0
-for i in range(1,11):
+result = []
+for i in range(1,12):
+    result.append(str(a))
     a = a + i
-    print(a)
-
+str_result =  ';'.join(result)
+print(str_result)
 ########################################################################################
 ## zad4
 print('***********************************')
