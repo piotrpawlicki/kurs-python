@@ -139,7 +139,10 @@ while game_nr < max_games:
         else:
             if last_guess == 0:
                 last_guess = user
-                print('Nie udało Ci się wygrać. spróbuj raz jeszcze')
+                if abs(last_guess-bot) < abs(last_guess - 0):
+                    print('Ciepło! spróbuj raz jeszcze')
+                else:
+                    print('Zimno! spróbuj raz jeszcze')
             elif abs(last_guess - bot) > abs(user-bot):
                 print('Ciepło! spróbuj raz jeszcze')
                 last_guess = user
