@@ -10,16 +10,29 @@ list_names = names.split(',')
 for i in list_names:
     print('Hello',i)
 ########################################################################################
-## zad2
+## Zad2 - za pomocą 2 pętli
 print('***********************************')
-print('Zad2 - za pomocą pętli')
+print('Zad2 - za pomocą 2 pętli')
 
 txt = input('Insert text: ')
 len_txt = len(txt)
 txt_new=[]
-for i in range (1,len_txt):
+for i in range (1, len_txt):
     if i % 2 == 1:
         txt_new.append(txt[i])
+txt = ''.join(txt_new)
+print(txt)
+
+########################################################################################
+## zad2
+print('***********************************')
+print('Zad2 - za pomocą 1 pętli')
+
+txt = input('Insert text: ')
+len_txt = len(txt)
+txt_new=[]
+for i in range (1, len_txt, 2):
+    txt_new.append(txt[i])
 txt = ''.join(txt_new)
 print(txt)
 
