@@ -57,10 +57,11 @@ print('***********************************')
 print('Zad4 - wersja druga')
 
 def silnia(a):
-    if a == 0:
-        return 1
+    if a != 0:
+        x = a * silnia(a-1)
+        return x
     else:
-        return a * silnia(a-1)
+        return 1
 
 x = int(input('Wprowadź liczbę w zakresie od 0 do 8: '))
 while x not in range(0, 9):
@@ -68,4 +69,4 @@ while x not in range(0, 9):
 a = silnia(x)
 liczby = [str(i) for i in range(1, x+1)]  ## do listy dodajemy kolejne elementy do wyświetlenia
 wynik = ' * '.join(liczby)
-print(f'{x}!:\n {wynik} = {a}')
+print(f'{x}!=\n{wynik} = {a}')
