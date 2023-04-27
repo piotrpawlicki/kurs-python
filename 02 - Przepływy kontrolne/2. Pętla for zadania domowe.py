@@ -51,3 +51,21 @@ else:
     print(f"{wynik} = {silnia}")
 
 
+########################################################################################
+## zad4
+print('***********************************')
+print('Zad4 - wersja druga')
+
+def silnia(a):
+    if a == 0:
+        return 1
+    else:
+        return a * silnia(a-1)
+
+x = int(input('Wprowadź liczbę w zakresie od 0 do 8: '))
+while x not in range(0, 9):
+    x = int(input('Błąd zakresu. Wprowadź liczbę w zakresie od 0 do 8: '))
+a = silnia(x)
+liczby = [str(i) for i in range(1, x+1)]  ## do listy dodajemy kolejne elementy do wyświetlenia
+wynik = ' * '.join(liczby)
+print(f'{x}!:\n {wynik} = {a}')
