@@ -1,4 +1,4 @@
-## zad1
+# zad1
 print('***********************************')
 print('Zad1')
 
@@ -8,7 +8,7 @@ for i in items:
 print('Great, we are ready!')
 
 ########################################################################################
-## zad2
+# zad2
 print('***********************************')
 print('Zad2')
 
@@ -18,7 +18,7 @@ for i in items:
 print('Podawaj na ciepło')
 
 ########################################################################################
-## zad3
+# zad3
 print('***********************************')
 print('Zad3')
 
@@ -30,12 +30,12 @@ for i in range(1, 12):
 str_result = ';'.join(result)
 print(str_result)
 ########################################################################################
-## zad4
+# zad4
 print('***********************************')
 print('Zad4')
 
-x = int(input('Wprowadź liczbę w zakresie od 0 do 8: '))
-while x not in range(0, 9):
+x = input('Wprowadź liczbę w zakresie od 0 do 8: ')
+while int(x) not in range(0, 9):
     x = int(input('Błąd zakresu. Wprowadź liczbę w zakresie od 0 do 8: '))
 if x == 0:
     print('0! = 1')
@@ -50,23 +50,31 @@ else:
     print(f"{wynik} = {silnia}")
 
 ########################################################################################
-## zad4
+# zad4
 print('***********************************')
 print('Zad4 - wersja druga')
 
 
-def silnia(a):
-    if a != 0:
-        x: int = a * silnia(a-1)
-        return x
+def silnia(silnia_input):
+    if silnia_input != 0:
+        silnia_output: int = silnia_input * silnia(silnia_input-1)
+        return silnia_output
     else:
         return 1
 
 
-x = int(input('Wprowadź liczbę w zakresie od 0 do 8: '))
-while x not in range(0, 9):
-    x = int(input('Błąd zakresu. Wprowadź liczbę w zakresie od 0 do 8: '))
+x = input('Wprowadź liczbę w zakresie od 0 do 8: ')
+try:
+    x = int(x)
+    while x not in range(0, 9):
+        x = int(input('Błąd zakresu. Wprowadź liczbę w zakresie od 0 do 8: '))
+        continue
+   ## break
+except ValueError:
+    print('Błąd formatu. Wprowadź liczbę w zakresie od 0 do 8: ')
+    continue
+
 a = silnia(x)
-liczby = [str(i) for i in range(1, x+1)]  ## do listy dodajemy kolejne elementy do wyświetlenia
+liczby = [str(i) for i in range(1, x+1)]  # do listy dodajemy kolejne elementy do wyświetlenia
 wynik = ' * '.join(liczby)
 print(f'{x}!=\n{wynik} = {a}')
