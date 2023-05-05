@@ -34,6 +34,7 @@ for i in tab:
 # Zad4
 print('***********************************')
 print('Zad4\n\n')
-
+'''
 tab_mn = [i * j in range(1: 11) for i in range (1, 11)]
 print(tab_mn)
+'''

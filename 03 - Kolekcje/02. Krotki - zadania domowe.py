@@ -15,7 +15,7 @@ print(f'Mój {zwierze} rasy {rasa} wabi się {imie}')
 print('***********************************')
 print('Zad2\n\n')
 
-k1 = (1, 2, 3, 4, 5, 6, 4)
+k1 = (1, 2, 3, 4, 5, 6, 4, 'Ala', 5, 'Ala')
 k1 = sorted(k1)
 duplicates = []
 
@@ -23,7 +23,6 @@ for i in range(len(k1)-1):
     if k1[i] == k1[i+1]:
         duplicates.append(k1[i])
 print(duplicates)
-
 ########################################################################################
 # Zad3
 print('***********************************')
