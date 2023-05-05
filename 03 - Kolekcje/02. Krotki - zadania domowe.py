@@ -15,8 +15,14 @@ print(f'Mój {zwierze} rasy {rasa} wabi się {imie}')
 print('***********************************')
 print('Zad2\n\n')
 
+def sort_key(elem):
+    if isinstance(elem, int):
+        return (0, elem)
+    else:
+        return (1, elem.lower())
+
 k1 = (1, 2, 3, 4, 5, 6, 4, 'Ala', 5, 'Ala')
-k1 = sorted(k1)
+k1 = sorted(k1, key = sort_key)
 duplicates = []
 
 for i in range(len(k1)-1):
