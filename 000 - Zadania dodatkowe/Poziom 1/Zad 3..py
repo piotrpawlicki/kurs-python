@@ -1,0 +1,5 @@
+txt = input('Enter text: ')
+txt = txt.strip()
+txt_splited = txt.split()
+word_num = len(txt_splited)
+print(f'Txt contains {word_num} words')
