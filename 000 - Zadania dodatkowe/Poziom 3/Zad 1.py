@@ -11,7 +11,7 @@ for char in txt:
     if ord(char) + offset > 127:
         offsetted_char = chr(ord(char) + offset - 127)
         txt_encrypted += offsetted_char
-    elif ord(char) == 32:
+    elif ord(char) == 32:  ## wyjątek na brak deskrypcji spacji
         offsetted_char = ' '
         txt_encrypted += offsetted_char
     else:
