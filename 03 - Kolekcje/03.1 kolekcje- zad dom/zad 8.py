@@ -30,4 +30,4 @@ result = list_item_counter(list_of_names)
 
 for key, value in result.items():
     if value > 2 :
-        print(key)
+        print(key, value)

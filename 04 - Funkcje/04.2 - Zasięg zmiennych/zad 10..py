@@ -69,18 +69,18 @@ def display(word_list):
 ##wybór słowa z listy słów
 def select_word(word_list):
     a = len(word_list)
-    b =  random.randint(0 , a-1)
+    b = random.randint(0 , a-1)
     result = word_list[b]
     return result
 
 ## user input
 def user_input():
-    a = input("Podaj literę: ")
-    while len(a) == 1 and a.isalpha():
-        return a.upper()
-    else:
-        print("Błąd wejścia, podaj literę.")
-
+    while True:
+        a = input("Podaj literę: ")
+        if len(a) == 1 and a.isalpha():
+            break
+        else:
+            print('Błąd typu. Podaj literę.')
 ##sprawdzenie czy litera jest w słowie
 def check_input(UserInput, word_list):
     indexes = []
@@ -190,7 +190,7 @@ def main():
             else:
                 print('Spróbuj jeszcze raz')
                 guess_number += 1
-                print(f'guess number = {guess_number}')
+                print(f'To była Twoja próba numrer {guess_number}')
         print(display(hidden_word_list))
 
     if check_results(guess_word_list, hidden_word_list):
