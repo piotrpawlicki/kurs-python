@@ -81,6 +81,7 @@ def user_input():
             break
         else:
             print('Błąd typu. Podaj literę.')
+    return a.upper()
 ##sprawdzenie czy litera jest w słowie
 def check_input(UserInput, word_list):
     indexes = []
@@ -196,6 +197,6 @@ def main():
     if check_results(guess_word_list, hidden_word_list):
         print('Gratuluję, wygrałeś!')
     else:
-        print('Wisisz, koleżko.')
+        print(f'Wisisz, koleżko. Miałeś odgadnąć słowo {guess_word}')
 
 main()
