@@ -7,6 +7,8 @@ def open_file():
         Tk().withdraw()
         filename = askopenfilename()
         with open(filename, 'r') as fopen:
+            if fopen == '':
+                return print('Empty file')
             return fopen.read()
     # Work with your open file
     except FileExistsError:
