@@ -21,7 +21,7 @@ def list_of_cards(sheet):
 
 
 def write_list_to_column(sheet, column_index, column_name, cards):
-    column = column_index + '1' # okreslenie komorki startowej dla kolumny\
+    column = column_index + '1' # okreslenie komorki startowej dla kolumny
     sheet[column] = column_name #dodanie nazwy kolumny
     for i, card in enumerate(cards, start = 2): #zaczynamy od elementu 2, bo pierwszy jest zajęty dla nazwy kolumny a 0 w excelu nie istnieje
         cell = column_index + str(i)
