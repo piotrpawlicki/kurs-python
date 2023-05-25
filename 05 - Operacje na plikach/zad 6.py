@@ -12,9 +12,10 @@ def read_from_xlsx():
     sheet = wb.active
     return sheet
 
+
 def list_of_cards(sheet):
     cards = []
-    for row in sheet.iter_rows(min_row=2):
+    for row in sheet.iter_rows():
         cards.append(row[0].value)
     return cards
 
@@ -25,17 +26,22 @@ def write_list_to_column(sheet, column_index, column_name, cards):
     for i, card in enumerate(cards, start = 2): #zaczynamy od elementu 2, bo pierwszy jest zajęty dla nazwy kolumny a 0 w excelu nie istnieje
         cell = column_index + str(i)
         sheet[cell] = card
+
+
 def visa(number):
     return str(number).startswith('4') and len(number) in (13, 16)
 
+
 def amex(number):
     return str(number).startswith('3') and len(number) == 15 and number[1] in ('4', '7')
+
 
 def master_card(number):
     return len(number) == 16 and (
         int(number[0:2]) in range(51,56) or
         2221 <= int(number[:4]) <= 2720
     )
+
 
 def check_number(num_list):
     visa_list=[]
@@ -50,6 +56,7 @@ def check_number(num_list):
         elif master_card(num):
             master_card_list.append(num)
     return visa_list, amex_list, master_card_list
+
 
 def main():
     sheet = read_from_xlsx()
