@@ -1,5 +1,6 @@
 import random
 
+
 def sample_string_only_numbers(x):
 
     if x == 1:
@@ -17,6 +18,7 @@ def sample_string_only_numbers(x):
         random_string = ''.join(numbers)
         return random_string
 
+
 def sample_string_with_user_input(number_of_strings, len_of_generated_string):
     user_input_strings = []
     for i in range(number_of_strings):
@@ -27,9 +29,11 @@ def sample_string_with_user_input(number_of_strings, len_of_generated_string):
         generated_string =  ''.join(random_strings)
     return generated_string
 
+
 def main():
     test = sample_string_with_user_input(5, 10)
     print(test)
+
 
 if __name__ == "__main__":
     main()
