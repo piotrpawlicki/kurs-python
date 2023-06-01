@@ -10,7 +10,7 @@ def check_url(user_url):
         if user_url.startswith("http://") or user_url.startswith("https://"):
             return True
         else:
-            user_url = "http://"+user_url
+            user_url = "http://" + user_url
             return user_url
     else:
         raise URLError("Invalid URL")
