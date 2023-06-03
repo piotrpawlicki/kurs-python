@@ -1,4 +1,7 @@
+import random
+
 ##konwersja słowa na listę
+
 def create_list(word):
     return list(word)
 
