@@ -45,6 +45,9 @@ def make_reservation():
     movie = display_movies()
     screening_id, title, duration, start_time, capacity = movie
     if capacity > 0 :
+        pass
+    else:
+        pass
 
 
 
@@ -56,6 +59,9 @@ def check_input(user_input, type):
         try:
             type(user_input)
             break
-        except:
+        except TypeError:
+            print('Type Errpr')
+        except ValueError:
+            print('Type Error')
 
 display_movies()
