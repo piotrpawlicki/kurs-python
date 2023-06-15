@@ -11,6 +11,12 @@ class Clock:
     def time_zone(self):
         print(self.time.tzinfo)
 
+    def change_time_zone(self, new_time_zone):
+        self.time = self.time.astimezone(new_time_zone)
+        print(self.time)
+
+    def all_time_zones(self):
+        print(pytz.all_timezones)
 class Calendar:
     def __init__(self):
         self.date = dt.date.today()
@@ -50,3 +56,4 @@ class ClockCalendar(Clock, Calendar):
 my_clock = ClockCalendar()
 my_clock.time_zone()
 my_clock.show_whole_month()
+
