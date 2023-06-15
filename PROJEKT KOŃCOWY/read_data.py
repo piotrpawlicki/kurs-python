@@ -50,7 +50,6 @@ def make_reservation():
         pass
 
 
-
 def cancel_reservation():
     pass
 
@@ -64,4 +63,3 @@ def check_input(user_input, type):
         except ValueError:
             print('Type Error')
 
-display_movies()
