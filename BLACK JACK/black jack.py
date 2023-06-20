@@ -18,7 +18,6 @@ class BJ_Card(k.Card):
 
 class BJ_Deck(k.Deck):
     """Klasa reprezentująca talia kart do gry."""
-
     def populate(self):
         for suit in BJ_Card.SUITS:
             for rank in BJ_Card.RANKS:
@@ -121,6 +120,7 @@ class BJ_Game(object):
             if not player.is_busted():
                 sp.append(player)
         return sp
+
 
 
     def __additional_cards(self, player):
