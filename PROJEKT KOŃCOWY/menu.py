@@ -43,7 +43,6 @@ def main_menu():
                 else:
                     question = input("Please enter m or s: ")
                     question = question.lower()
-
         elif choice == "2":
             # Add room
             entry = ask_for_password()
@@ -104,7 +103,6 @@ def main_menu():
                     seat_id = ask_number2("Which seat do you want to reserve? Enter the seat ID: ")
                     cinema.make_reservation(screening_id, seat_id)
                 break
-
         elif choice == "6":
 
              print("Exiting the program...")
