@@ -1,10 +1,11 @@
 # Program do rezerwacji miejsc w kinie
-> Opis realizowanych zadań podczas zajęć z dnia 20.05.2023
+> Opis projektu końcowego
 
 ## Spis treści
 * [Podsumowanie](#Podsumowanie)
-  * [Opis struktury danych](#WOpis Struktury danych)
-  * [Generator Nauczyciela](#Generator Nauczyciela)
+  * [Opis struktury danych](#Opis Struktury danych)
+  * [Kod wykorzystany do stworzenia struktury danych](#Kod wykorzystany do stworzenia struktury danych)
+  * [Wypełnienie tabeli przykłądowymi danymi](#Wypełnienie tabeli przykłądowymi danymi)
 
 * [Wykorzystane_technologie](#Wykorzystane technologie)
 * [Podziękowania](#Podziękowania)
@@ -52,37 +53,54 @@ W tabeli "Screenings" przechowujemy informacje o seansach, takie jak film (za po
 
 W tabeli "Bookings" przechowujemy informacje o rezerwacjach, takie jak seans (za pomocą klucza obcego do tabeli "Screenings") oraz numer zarezerwowanego miejsca.
 
+W tabeli "Rooms" przechowujemy informację o miejscach w danych salach kinowych.
 
 
 ### Kod wykorzystany do stworzenia struktury danych
 ````
+DROP TABLE IF EXISTS Movies;
 CREATE TABLE Movies (
   movie_id INT PRIMARY KEY,
   title VARCHAR(255),
   duration INT
 );
 
+
+
+DROP TABLE IF EXISTS Rooms;
 CREATE TABLE Rooms (
   room_id INT PRIMARY KEY,
   room_name VARCHAR(255),
   capacity INT
 );
 
-CREATE TABLE Screenings (
-  screening_id INT PRIMARY KEY,
-  movie_id INT,
+DROP TABLE IF EXISTS Seats;
+CREATE TABLE Seats (
+  seat_id VARCHAR(255) PRIMARY KEY,
   room_id INT,
-  start_time DATETIME,
-  FOREIGN KEY (movie_id) REFERENCES Movies(movie_id),
+  seat_number INT,
   FOREIGN KEY (room_id) REFERENCES Rooms(room_id)
 );
 
+DROP TABLE IF EXISTS Screenings;
+CREATE TABLE Screenings (
+  screening_id INT AUTO_INCREMENT PRIMARY KEY,
+  movie_id INT,
+  room_id INT,
+  start_time DATETIME,
+  end_time DATETIME,
+  FOREIGN KEY (movie_id) REFERENCES Movies(movie_id),
+  FOREIGN KEY (room_id) REFERENCES Rooms(room_id)
+);
+DROP TABLE IF EXISTS Bookings;
 CREATE TABLE Bookings (
-  booking_id INT PRIMARY KEY,
+  reservation_id INT AUTO_INCREMENT PRIMARY KEY,
+  booking_id INT,
   screening_id INT,
   seat_number INT,
   FOREIGN KEY (screening_id) REFERENCES Screenings(screening_id)
 );
+
 ````
 
 #### Wypełnienie tabeli przykłądowymi danymi
@@ -107,7 +125,36 @@ VALUES
   (3, 2, 2, '2023-06-07 15:30:00'),
   (4, 3, 1, '2023-06-07 18:00:00'),
   (5, 3, 2, '2023-06-07 20:30:00');
+  
+-- Wypełnienie tabeli Seats na podstawie tabeli Rooms
+  INSERT INTO Seats (seat_id, room_id, seat_number)
+SELECT 
+  CONCAT(r.room_id, '_', s.seat_number) AS seat_id,
+  r.room_id,
+  s.seat_number
+FROM Rooms r
+CROSS JOIN (
+  SELECT 
+    (a.a + (10 * b.a) + 1) AS seat_number
+  FROM
+    (SELECT 0 AS a UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS a
+  CROSS JOIN
+    (SELECT 0 AS a UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS b
+) s
+WHERE s.seat_number <= r.capacity;
 ````
+
+## Działanie programu
+
+Do realizacji projektu wykorzystano trzy moduły
+1. user_functions.py
+2. cinema.py
+3. menu.py
+
+ - W module "user_functions.py" wykorzystano funkcje wejścia stworzone podczas kursu
+ - Moduł "cinema.py" zawiera definicję klasy Cinema oraz opis wszystkich funkcji w klasie
+ - Moduł menu.py zaiwera definicję menu oraz pozwala na uruchomienie programu.
+
 ## Wykorzystane technologie
 - Python 3.9.13
 - PyCharm 2023.1
@@ -123,4 +170,4 @@ VALUES
 
 ## Autor
 Created by Piotr Pawlicki (piotr.a.pawlicki@gmail.com)
-# Hackaton-2
+

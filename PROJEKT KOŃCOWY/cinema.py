@@ -1,5 +1,4 @@
 import pymysql
-from user_functions import *
 import datetime as t
 from tabulate import tabulate
 

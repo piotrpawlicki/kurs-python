@@ -1,4 +1,5 @@
 from getpass import *
+import tkinter as tk
 import sys
 def ask_yes_no(question):
     """Zadaj pytanie, na które można odpowiedzieć tak lub nie."""
@@ -51,6 +52,20 @@ def ask_for_password():
 
     print("Too many attempts. Goodbye.")
     return False
-# if __name__ == "__main__":
-#     print("Uruchomiłeś ten moduł bezpośrednio (zamiast go zaimportować).")
-#     input("\n\nAby zakończyć program, naciśnij klawisz Enter.")
+
+
+def ask_string(window, prompt):
+    result = tk.StringVar()
+    label = tk.Label(window, text=prompt)
+    label.pack()
+    entry = tk.Entry(window, textvariable=result)
+    entry.pack()
+
+    def close_window():
+        window.destroy()
+
+    button = tk.Button(window, text="OK", command=close_window)
+    button.pack()
+
+    window.mainloop()
+    return result.get()
